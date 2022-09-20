@@ -13,6 +13,11 @@ def rePlaceData(value):
 
 def getAIAData(name, birth, gender):   
     driver = webdriver.Chrome('./chromedriver')
+    scrapingResult = {
+        'company': "AIA",
+        'price': 0,
+        'contents': []
+    }
     driver.get('https://www.aia.co.kr/ko/our-products/medical-protection/non-par-denteal-health-plan.html#')
     #AIA 생명 치과 보험 조회
     textBox = driver.find_element(By.XPATH, '//*[@id="aia644363719"]')
@@ -30,6 +35,8 @@ def getAIAData(name, birth, gender):
     driver.implicitly_wait(2)
     price = driver.find_element(By.XPATH, '//*[@id="premium-by-timespan-value"]')
     print(price.text)
+    scrapingResult['price'] = price
+    contentsList = []
 
     tableBody = driver.find_element(By.XPATH, '//*[@id="collapse-large-724022276"]/div[1]/div/table').find_element(By.TAG_NAME,'tbody')
     driver.find_element(By.XPATH, '//*[@id="the_fine_print"]/div[2]/div[1]/div[2]/div/a[2]').click()
@@ -37,7 +44,10 @@ def getAIAData(name, birth, gender):
     for index, value in enumerate(rows):
         if index != 0:
             print(value.find_elements(By.TAG_NAME,'td')[0].text)
- 
+            contentsList.append(value.find_elements(By.TAG_NAME, 'td')[0].text)
+    scrapingResult['contents'] = contentsList
+    return scrapingResult
+
 def getRinaData(name, birth, gender):  
     driver = webdriver.Chrome('./chromedriver')
     scrapingResult = {
@@ -78,4 +88,5 @@ def getRinaData(name, birth, gender):
     scrapingResult['contents'] = contentsList
     return scrapingResult
 
+getAIAData("유관우",'890119',1)
 getRinaData("유관우",'890119',1)
