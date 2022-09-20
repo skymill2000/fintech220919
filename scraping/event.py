@@ -9,5 +9,6 @@ searchInput = driver.find_element(By.ID, 'top_search')
 searchInput.send_keys('아이유')
 searchButton = driver.find_element(By.CSS_SELECTOR, '#gnb > fieldset > button.btn_icon.search_m')
 searchButton.click()
-
+result = driver.find_element(By.ID, 'actGenreName')
+print(result.text)
 #work2 해당 검색 결과의 활동장르를 출력해 주세요
