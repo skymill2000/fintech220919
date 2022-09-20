@@ -11,4 +11,9 @@ tableRows = table.find_elements(By.TAG_NAME, 'tr')
 
 for index, value in enumerate(tableRows):
     title = value.find_elements(By.TAG_NAME, 'td')[5]
+    album = value.find_elements(By.TAG_NAME, 'td')[6]
+    like =  value.find_elements(By.TAG_NAME, 'td')[7]
+    # 앨범명도 표시하기
     print(title.text)
+    print(album.text)
+    print(like.text)
