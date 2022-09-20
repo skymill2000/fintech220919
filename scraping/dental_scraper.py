@@ -34,17 +34,17 @@ def getAIAData(name, birth, gender):
     resultBtn.click()
     driver.implicitly_wait(2)
     price = driver.find_element(By.XPATH, '//*[@id="premium-by-timespan-value"]')
-    print(price.text)
-    scrapingResult['price'] = price
-    contentsList = []
+    resultValue = rePlaceData(price.text)
+    scrapingResult['price'] = resultValue
 
     tableBody = driver.find_element(By.XPATH, '//*[@id="collapse-large-724022276"]/div[1]/div/table').find_element(By.TAG_NAME,'tbody')
     driver.find_element(By.XPATH, '//*[@id="the_fine_print"]/div[2]/div[1]/div[2]/div/a[2]').click()
     rows = tableBody.find_elements(By.TAG_NAME, "tr")
+
+    contentsList = []
     for index, value in enumerate(rows):
         if index != 0:
-            print(value.find_elements(By.TAG_NAME,'td')[0].text)
-            contentsList.append(value.find_elements(By.TAG_NAME, 'td')[0].text)
+            contentsList.append(value.find_elements(By.TAG_NAME,'td')[0].text)
     scrapingResult['contents'] = contentsList
     return scrapingResult
 
