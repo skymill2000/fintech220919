@@ -72,6 +72,9 @@ def getRinaData(name, birth, gender):
     htmlResult = driver.find_element(By.XPATH,
         '//*[@id="contents"]/div[2]/div[2]/div[2]/div/table/tbody[1]/tr[1]/td[2]/strong').text
     resultValue = rePlaceData(htmlResult)
+
+    print(resultValue)
+
     scrapingResult['price'] = resultValue
     driver.implicitly_wait(2)
     detailBtn = driver.find_element(By.XPATH,'//*[@id="openLayerplanPonA2"]')
@@ -87,6 +90,3 @@ def getRinaData(name, birth, gender):
             contentsList.append(value.find_elements(By.TAG_NAME,'th')[0].text)
     scrapingResult['contents'] = contentsList
     return scrapingResult
-
-getAIAData("유관우",'890119',1)
-getRinaData("유관우",'890119',1)
