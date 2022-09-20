@@ -5,9 +5,9 @@ app = Flask(__name__)
 cors = CORS(app)
 scraper = dental_scraper
 
+# 아래 내용 복사해서 터미널에 붙여넣기
 # pip install flask
 # pip install jsonify
-# pip install request
 # pip install flask_cors
 # cmd) python server.py
 
@@ -23,6 +23,6 @@ def LinaData():
     name = request.form['name']
     birth = request.form['birth']
     gender = request.form['gender']
-    return jsonify(scraper.getLinaData(name, birth, gender))
+    return jsonify(scraper.getRinaData(name, birth, gender))
 
 app.run()

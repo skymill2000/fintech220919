@@ -13,12 +13,12 @@ def rePlaceData(value):
 
 def getAIAData(name, birth, gender):   
     driver = webdriver.Chrome('./chromedriver')
+    driver.get('https://www.aia.co.kr/ko/our-products/medical-protection/non-par-denteal-health-plan.html#')
     scrapingResult = {
         'company': "AIA",
         'price': 0,
         'contents': []
     }
-    driver.get('https://www.aia.co.kr/ko/our-products/medical-protection/non-par-denteal-health-plan.html#')
     #AIA 생명 치과 보험 조회
     textBox = driver.find_element(By.XPATH, '//*[@id="aia644363719"]')
     textBox.send_keys('19'+birth)
