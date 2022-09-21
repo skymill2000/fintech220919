@@ -1,16 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Welcome from "./components/Welcome";
-import EventComponent from "./components/EventComponent";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListComponent from "./components/ListComponent";
 import AppBar from "./components/Common/AppBar";
+import EventComponent from "./components/EventComponent";
 
 function App() {
   return (
-    <div className="App">
-      <AppBar title={"메인"}></AppBar>
-      <ListComponent></ListComponent>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ListComponent />}></Route>
+        <Route path="/event" element={<EventComponent />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

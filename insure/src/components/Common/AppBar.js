@@ -9,6 +9,7 @@ const HeaderBlock = styled.div`
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  text-shadow: 3px 3px 3px #1c6ea4;
 `;
 
 const AppBar = ({ title }) => {
