@@ -19,6 +19,7 @@ def getAIAData(name, birth, gender):
         'price': 0,
         'contents': []
     }
+    
     #AIA 생명 치과 보험 조회
     textBox = driver.find_element(By.XPATH, '//*[@id="aia644363719"]')
     textBox.send_keys('19'+birth)
