@@ -55,6 +55,7 @@ cars.map((car) => {
 /*-----구조분해 할당 활용-------*/
 cars.map(({ carname, ph }) => {
   if (carname === "bmw") {
-    console.log("해당차량의 마력은 " + ph + " 입니다");
+    //'' != ``
+    console.log(`${carname} 마력은 ${ph} 입니다`);
   }
 });
