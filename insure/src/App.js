@@ -1,13 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Welcome from "./components/Welcome";
+import EventComponent from "./components/EventComponent";
 
 function App() {
   return (
     <div className="App">
-      <Welcome userName={"홍길동"} age={30}></Welcome>
-      <Welcome userName={"홍길동"} age={30}></Welcome>
-      <Welcome userName={"홍길동"} age={30}></Welcome>
-      <Welcome userName={"홍길동"} age={30}></Welcome>
+      <EventComponent></EventComponent>
     </div>
   );
 }
