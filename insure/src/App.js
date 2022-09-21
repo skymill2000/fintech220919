@@ -1,21 +1,21 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-const Welcome = () => {
-  return <p>홍길동님 안녕하세요</p>;
+const Welcome = ({ userName, age }) => {
+  return (
+    <p>
+      {age}세 <b>{userName}</b>님 안녕하세요
+    </p>
+  );
 };
 
 function App() {
   return (
     <div className="App">
-      <Welcome></Welcome>
-      <Welcome></Welcome>
-      <Welcome></Welcome>
-      <Welcome></Welcome>
-      <p>홍길동님 안녕하세요</p>
-      <p>홍길동님 안녕하세요</p>
-      <p>홍길동님 안녕하세요</p>
-      <p>홍길동님 안녕하세요</p>
+      <Welcome userName={"홍길동"} age={30}></Welcome>
+      <Welcome userName={"홍길동"} age={30}></Welcome>
+      <Welcome userName={"홍길동"} age={30}></Welcome>
+      <Welcome userName={"홍길동"} age={30}></Welcome>
     </div>
   );
 }
