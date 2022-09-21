@@ -44,3 +44,17 @@ for (car of cars) {
     console.log("해당차량의 마력은 " + car.ph + " 입니다");
   }
 }
+
+/*-----------------------*/
+cars.map((car) => {
+  if (car.carname === "bmw") {
+    console.log("해당차량의 마력은 " + car.ph + " 입니다");
+  }
+});
+
+/*-----구조분해 할당 활용-------*/
+cars.map(({ carname, ph }) => {
+  if (carname === "bmw") {
+    console.log("해당차량의 마력은 " + ph + " 입니다");
+  }
+});
