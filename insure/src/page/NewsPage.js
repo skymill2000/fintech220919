@@ -14,9 +14,11 @@ const NewsPage = () => {
     setSearchInput(value);
   };
   const handleClick = () => {
-    const url = `https://newsapi.org/v2/everything?q=${searchInput}&from=2022-08-22&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5&language=ko`;
+    const apikey = "78bc6ddd8cdb48ceac76f5f9b9dfc4c5";
+    const url = `https://newsapi.org/v2/everything?q=${searchInput}&from=2022-08-22&sortBy=publishedAt&apiKey=${apikey}&language=ko`;
     axios.get(url).then(function (response) {
-      console.log(response);
+      console.log(response.data.articles);
+      setSearchList(response.data.articles);
     });
   };
   return (
@@ -26,7 +28,7 @@ const NewsPage = () => {
         handleChange={handleChange}
         handleClick={handleClick}
       ></SearchInput>
-      <NewsList></NewsList>
+      <NewsList searchList={searchList}></NewsList>
     </div>
   );
 };
