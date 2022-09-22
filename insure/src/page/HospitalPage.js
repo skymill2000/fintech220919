@@ -20,6 +20,7 @@ const HospitalPage = () => {
         ServiceKey:
           "uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ==",
         emdongNm: searchInput,
+        clCd: "31",
       },
     };
 
