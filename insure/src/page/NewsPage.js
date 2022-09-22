@@ -16,6 +16,7 @@ const NewsPage = () => {
   const handleClick = () => {
     const apikey = "78bc6ddd8cdb48ceac76f5f9b9dfc4c5";
     const url = `https://newsapi.org/v2/everything?q=${searchInput}&from=2022-08-22&sortBy=publishedAt&apiKey=${apikey}&language=ko`;
+    console.log(url);
     axios.get(url).then(function (response) {
       console.log(response.data.articles);
       setSearchList(response.data.articles);
