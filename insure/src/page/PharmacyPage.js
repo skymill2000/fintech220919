@@ -1,10 +1,21 @@
+import axios from "axios";
 import React from "react";
 import AppBar from "../components/Common/AppBar";
 import SearchInput from "../components/news/SearchInput";
 
 const PharmacyPage = () => {
   const handleChange = (event) => {};
-  const handleClick = () => {};
+  const handleClick = () => {
+    const option = {
+      method: "GET",
+      url: "",
+      params: {},
+    };
+
+    axios(option).then((response) => {
+      console.log(response);
+    });
+  };
 
   return (
     <div>
