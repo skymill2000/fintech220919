@@ -6,6 +6,7 @@ import AxiosComponent from "./components/AxiosComponent";
 import NewsPage from "./page/NewsPage";
 import PharmacyPage from "./page/PharmacyPage";
 import HospitalPage from "./page/HospitalPage";
+import HospitalDetailPage from "./page/HospitalDetailPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/news" element={<NewsPage />}></Route>
         <Route path="/pharmacy" element={<PharmacyPage />}></Route>
         <Route path="/hospital" element={<HospitalPage />}></Route>
+        <Route path="/hospitalDetail" element={<HospitalDetailPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
