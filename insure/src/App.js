@@ -4,6 +4,7 @@ import ListComponent from "./components/ListComponent";
 import EventComponent from "./components/EventComponent";
 import AxiosComponent from "./components/AxiosComponent";
 import NewsPage from "./page/NewsPage";
+import PharmacyPage from "./page/PharmacyPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/event" element={<EventComponent />}></Route>
         <Route path="/axios" element={<AxiosComponent />}></Route>
         <Route path="/news" element={<NewsPage />}></Route>
+        <Route path="/pharmacy" element={<PharmacyPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
