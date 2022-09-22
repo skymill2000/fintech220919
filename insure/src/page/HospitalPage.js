@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import AppBar from "../components/Common/AppBar";
+import HospitalListItem from "../components/hospital/HospitalListItem";
 import SearchInput from "../components/news/SearchInput";
 
 const HospitalPage = () => {
@@ -11,7 +12,23 @@ const HospitalPage = () => {
     const { value } = event.target;
     setSearchInput(value);
   };
-  const handleClick = () => {};
+  const handleClick = () => {
+    const option = {
+      method: "GET",
+      url: "http://apis.data.go.kr/B551182/hospInfoService1/getHospBasisList1",
+      params: {
+        ServiceKey:
+          "uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ==",
+        emdongNm: searchInput,
+      },
+    };
+
+    // #work6 약국 검색 api 를 활용하여 특정 동의 약국 목록을 받아오기
+    axios(option).then((response) => {
+      console.log(response.data.response.body.items.item);
+      setHospitalList(response.data.response.body.items.item);
+    });
+  };
 
   return (
     <div>
@@ -28,6 +45,17 @@ const HospitalPage = () => {
         handleChange={handleChange}
         handleClick={handleClick}
       ></SearchInput>
+      {hospitalList.map(({ addr, clCd, clCdNm, yadmNm, ykiho }) => {
+        return (
+          <HospitalListItem
+            addr={addr}
+            clCd={clCd}
+            clCdNm={clCdNm}
+            yadmNm={yadmNm}
+            ykiho={ykiho}
+          ></HospitalListItem>
+        );
+      })}
     </div>
   );
 };
