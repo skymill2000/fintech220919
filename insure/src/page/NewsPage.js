@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import Appbar from "../components/Common/AppBar";
 import NewsList from "../components/news/NewsList";
@@ -10,9 +11,14 @@ const NewsPage = () => {
   //2. axios를 통해서 데이터를 요청하여 내역 searchList 채우기
   const handleChange = (event) => {
     const { value } = event.target;
-    console.log(value);
+    setSearchInput(value);
   };
-  const handleClick = () => {};
+  const handleClick = () => {
+    const url = `https://newsapi.org/v2/everything?q=${searchInput}&from=2022-08-22&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5&language=ko`;
+    axios.get(url).then(function (response) {
+      console.log(response);
+    });
+  };
   return (
     <div>
       <Appbar title={"뉴스 검색"}></Appbar>
