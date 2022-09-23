@@ -60,7 +60,7 @@ async function run() {
   let param = {
     organization: "0200",
     userName: "유관우",
-    identity: "8901191042811",
+    identity: "",
     phoneNo: "01091615808",
     inquiryType: "0",
     telecom: "1",
