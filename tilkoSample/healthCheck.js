@@ -4,7 +4,8 @@ const Crypto = require("crypto");
 const NodeRSA = require("node-rsa");
 const FS = require("fs");
 const apiHost = "https://api.tilko.net/";
-const apiKey = process.env.APP_KEY;
+const apiKey = "";
+//todo : tilko 에서 받은 api 키 입력
 
 // AES 암호화 함수
 function aesEncrypt(key, iv, plainText) {
