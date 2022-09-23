@@ -7,6 +7,8 @@ import NewsPage from "./page/NewsPage";
 import PharmacyPage from "./page/PharmacyPage";
 import HospitalPage from "./page/HospitalPage";
 import HospitalDetailPage from "./page/HospitalDetailPage";
+import Carinfo from "./page/CarInfo";
+import TreatmentDosageInfoPage from "./page/TreatmentDosageInfoPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/pharmacy" element={<PharmacyPage />}></Route>
         <Route path="/hospital" element={<HospitalPage />}></Route>
         <Route path="/hospitalDetail" element={<HospitalDetailPage />}></Route>
+        <Route path="/carInfo" element={<Carinfo />}></Route>
+        <Route path="/treatment" element={<TreatmentDosageInfoPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

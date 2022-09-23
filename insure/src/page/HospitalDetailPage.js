@@ -17,7 +17,7 @@ const HospitalDetailPage = () => {
     console.log("콤포넌트가 마운트 될때 실행됩니다.");
     const option = {
       method: "GET",
-      url: "http://apis.data.go.kr/B551182/hospDiagInfoService1/getClinicTop5List1",
+      url: "/B551182/hospDiagInfoService1/getClinicTop5List1",
       headers: {},
       params: {
         ServiceKey:

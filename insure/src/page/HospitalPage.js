@@ -15,7 +15,7 @@ const HospitalPage = () => {
   const handleClick = () => {
     const option = {
       method: "GET",
-      url: "http://apis.data.go.kr/B551182/hospInfoService1/getHospBasisList1",
+      url: "/B551182/hospInfoService1/getHospBasisList1",
       params: {
         ServiceKey:
           "uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ==",
